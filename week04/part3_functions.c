@@ -18,8 +18,12 @@ int main() {
 
     // Function call
     result = add(num1, num2);
-
     printf("Result: %d\n", result);
+
+    // Another function call
+    result = add(2, 7);
+    printf("Result: %d\n", result);
+
     return 0;
 }
 
