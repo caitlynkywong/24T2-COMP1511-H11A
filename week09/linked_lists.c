@@ -1,5 +1,6 @@
 // main.c
 // Written by Sofia De Bellis (z5418801) on March 2024
+// and lightly edited by Caitlyn Wong (z5360361)
 // Program to test simple linked lists functions
 
 #include <stdio.h>
@@ -128,6 +129,7 @@ struct node *create_node(int data) {
 struct node *insert_head(struct node *head, int data) {
     // Create a new node
     struct node *new_node = create_node(data);
+    printf("mallocing a struct node with data %d in insert_head()\n", data);
     new_node->next = head;
 
     return new_node;
@@ -136,6 +138,7 @@ struct node *insert_head(struct node *head, int data) {
 struct node *insert_tail(struct node *head, int data) {
     // Create a new node
     struct node *new_node = create_node(data);
+    printf("mallocing a struct node with data %d in insert_tail()\n", data);
 
     // If the linked list is empty, return the new node
     if (head == NULL) {
@@ -195,6 +198,7 @@ struct node *remove_head(struct node *head) {
     // Update the head to point to the next node
     head = head->next;
     // Free the memory allocated for the old head node
+    printf("freeing a struct node with data %d in remove_head()\n", temp->data);
     free(temp);
 
     return head;
@@ -209,6 +213,7 @@ struct node *remove_tail(struct node *head) {
     // If the linked list has only one node, free the memory
     // allocated for the node and return NULL
     if (head->next == NULL) {
+        printf("freeing a struct node with data %d in remove_tail()\n", head->data);
         free(head);
         return NULL;
     }
@@ -226,6 +231,7 @@ struct node *remove_tail(struct node *head) {
     current->next = NULL;
 
     // Free the memory allocated for the last node
+    printf("freeing a struct node with data %d in remove_tail()\n", temp->data);
     free(temp);
 
     return head;
