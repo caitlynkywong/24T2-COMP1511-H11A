@@ -1,4 +1,4 @@
-// main.c
+// linked_lists.c
 // Written by Sofia De Bellis (z5418801) on March 2024
 // and lightly edited by Caitlyn Wong (z5360361)
 // Program to test simple linked lists functions
